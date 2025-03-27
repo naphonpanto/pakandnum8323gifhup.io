@@ -1,0 +1,115 @@
+/* ใช้ฟอนต์ Press Start 2P จาก Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', sans-serif; /* ใช้ฟอนต์พิกเซล */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('img2.jpg'); /* ตั้งค่าภาพพื้นหลัง */
+    background-size: cover; /* ปรับขนาดให้พอดีกับหน้าจอ */
+    background-position: center;
+    padding: 0;
+}
+
+/* กำหนด layout ของ container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px; /* เพิ่มระยะห่างระหว่างกล่อง */
+    flex-wrap: wrap; /* ทำให้กล่องยืดหยุ่นตามขนาด */
+    width: 100%;
+    max-width: 900px; /* เพิ่มขนาดสูงสุดของคอนเทนเนอร์ */
+    margin: auto;
+}
+
+/* จัดระเบียบการแสดงข้อมูลในแต่ละกล่อง */
+.time-info {
+    display: flex;
+    flex-direction: column; /* จัดให้ข้อมูลในแนวตั้ง */
+    align-items: center;
+    gap: 0px;  /* ลดระยะห่างระหว่างเนื้อหาภายในกล่อง */
+    font-size: 20px; /* ลดขนาดตัวเลขให้เล็กลง */
+    font-weight: bold;
+    color: #ffffff;
+    width: 100%;
+    max-width: 475px;
+    text-align: center; /* ทำให้ข้อความตรงกลาง */
+    padding: 20px;
+    margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างกล่อง */
+}
+
+/* จัดการแสดงข้อมูลในแต่ละกลุ่ม (ปี เดือน วัน) */
+.time-section {
+    display: inline-flex; /* ทำให้ข้อมูลแสดงในบรรทัดเดียวกัน */
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* เพิ่มระยะห่างระหว่างปี, เดือน, และวัน */
+    font-size: 16px; /* ลดขนาดข้อความในส่วนปี, เดือน, วัน */
+}
+
+/* กล่องเวลาให้มีขนาดตามเนื้อหาภายใน */
+.time-box {
+    display: flex;
+    justify-content: space-between; /* จัดเรียงข้อความในกล่องเวลาเป็นระนาบเดียวกัน */
+    align-items: center;
+    width: 100%; /* ใช้ความกว้างเต็มพื้นที่ */
+    padding: 10px; /* ลดระยะห่างภายในกล่อง */
+    background-color: #FFFFFF; /* สีพื้นหลังของกล่องเวลาเป็นสีขาว */
+    border: 2px solid #000000; /* เส้นขอบสีเทาเข้ม */
+    border-radius: 10px; /* ทำให้มุมกล่องมน */
+    color: #333; /* ตัวอักษรในกล่องเวลา */
+    gap: 15px; /* ระยะห่างระหว่างเวลา */
+    margin-top: 15px; /* เพิ่มระยะห่างจากข้อมูลปี เดือน วัน */
+    font-size: 14px; /* ลดขนาดตัวเลขในกล่องเวลาให้เล็กลง */
+    font-weight: bold; /* ทำให้ตัวเลขในกล่องเวลาเป็นตัวหนา */
+    overflow: hidden; /* ป้องกันการขยายเกินขนาด */
+    text-align: center; /* ทำให้ข้อความในกล่องเวลาอยู่ตรงกลาง */
+}
+
+/* จัดการข้อมูลในกล่องเวลาให้อยู่ระนาบเดียวกัน */
+.time-box .time-item {
+    display: flex; /* ใช้ flex เพื่อให้ข้อความอยู่ในแถวเดียวกัน */
+    justify-content: center; /* ทำให้ข้อความอยู่กลาง */
+    align-items: center; /* จัดกลางในแนวตั้ง */
+    gap: 10px; /* เพิ่มระยะห่างระหว่างข้อความ */
+    text-align: center; /* ทำให้ข้อความอยู่กลาง */
+}
+
+/* จัดการสไตล์หัวข้อ */
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* ปรับให้หน้าจอมือถือดูดี */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .time-info {
+        width: 90%; /* ลดขนาดกล่องในมือถือ */
+    }
+
+    .time-info .item {
+        font-size: 16px; /* ลดขนาดในมือถือ */
+    }
+
+    h3 {
+        font-size: 22px; /* ลดขนาดหัวข้อ */
+    }
+
+    .time-box {
+        flex-direction: row; /* ให้กล่องเวลาเป็นแถวแนวนอน */
+        gap: 10px; /* ลดระยะห่างระหว่างข้อมูล */
+    }
+}
